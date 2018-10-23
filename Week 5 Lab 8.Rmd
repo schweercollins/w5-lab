@@ -47,15 +47,27 @@ output            : papaja::apa6_pdf
 
 ```{r setup, include = FALSE}
 library("papaja")
+library("tidyverse")
+library("rio")
+library("dplyr")
+library("here")
+
 ```
 
 ```{r analysis-preferences}
 # Seed for random number generation
 set.seed(42)
-knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed,
+                      echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE,
+                      fig.width = 6.5, 
+                      fig.height = 8)
 ```
 
-
+```{r load_data, include = FALSE}
+d <- import(here("data", "star.csv"))
+```
 
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
@@ -71,6 +83,7 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 
 
 # Results
+
 
 # Discussion
 
