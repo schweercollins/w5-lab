@@ -30,7 +30,7 @@ abstract: |
 keywords          : "Trains, Planes, Automobiles"
 
 
-bibliography      : ["r-references.bib"]
+bibliography      : "refslab5.bib"
 
 floatsintext      : no
 figurelist        : no
@@ -79,7 +79,7 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ## Procedure
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
+
 
 
 # Results
@@ -87,13 +87,18 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 
 # Discussion
 
+Child maltreatment is characterized by its multifinality, this means that individual differences play a role in how child maltreatment is experienced and how it affects later development. In part, this can be explained by timing, dose, chronicity and type of maltreatment [@gunnar2006bringing]. For instance, Cowell, Cicchetti, Rogosch & Toth [-@cowell2015childhood] found that on measures of inhibitory control and working memory, maltreated children showed poorer performance than their non-maltreated counterparts. Furthermore, @cowell2015childhood found that within the maltreated group, children that had experienced maltreatment during infancy had worse performance in comparison with children that experienced maltreatment later in childhood. 
+
+
 
 \newpage
 
 # References
-```{r create_r-references}
-r_refs(file = "r-references.bib")
-```
+
+
+
+
+
 
 \begingroup
 \setlength{\parindent}{-0.5in}
