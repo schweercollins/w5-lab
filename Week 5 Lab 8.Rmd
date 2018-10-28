@@ -69,18 +69,6 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed,
 d <- import(here("data", "star.csv"))
 ```
 
-# Methods
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
-
-## Participants
-
-## Material
-
-## Procedure
-
-## Data analysis
-
-
 
 # Results
 The table below presents the mean scores and standard deviations for math and reading separated by sex(i.e., boys and girls) and whether these students receive free/reduced price meals or not.
@@ -97,6 +85,24 @@ sum_d <- d %>%
 knitr::kable(sum_d, digits = 2)
 
 ```
+
+As shown in *Figure 1* (at the end of the document), we observed a slight positive association between the number of years of teaching experience and students' math scores. Teachers who reported more years of teaching experience were also more likely to have students in their class with higher math scores, compared to teachers with less experience. This association was present for both students who recieved free and reduced meals and those who do not. However, the plot shows that students who do receive free and reduced lunches, on average, had lower math scores than students with paid meal status, regardless of the years of teaching experience of their educator. 
+
+```{r plot, echo = FALSE, eval = TRUE}
+theme_set(theme_minimal())
+ggplot(d, aes(x = totexp, y = tmathss)) +
+geom_point(color = "gray", size = 1.25) +
+geom_smooth(aes(color = factor(frl, labels = c("Paid Meals", "Free/Reduced Price Meals"))), method = "lm") +
+labs(x = "Teacher Experience (years)",
+     y = "Total Math Scale Score",
+     title = "Relation between teacher experience and math scores",
+     subtitle = "Seperate regression lines displayed by free/reduced price lunch status",
+     color = "Lunch status",
+     no = "Paid Meals") +
+  theme(legend.position = "bottom")
+```
+
+
 # Discussion
 
 Child maltreatment is characterized by its multifinality, this means that individual differences play a role in how child maltreatment is experienced and how it affects later development. In part, this can be explained by timing, dose, chronicity and type of maltreatment [@gunnar2006bringing]. For instance, Cowell, Cicchetti, Rogosch & Toth [-@cowell2015childhood] found that on measures of inhibitory control and working memory, maltreated children showed poorer performance than their non-maltreated counterparts. Furthermore, @cowell2015childhood found that within the maltreated group, children that had experienced maltreatment during infancy had worse performance in comparison with children that experienced maltreatment later in childhood. 

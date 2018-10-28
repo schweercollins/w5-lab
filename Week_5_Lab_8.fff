@@ -1,0 +1,7 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{Week_5_Lab_8_files/figure-latex/plot-1.pdf}
+\caption{}
+\end{figure*}
