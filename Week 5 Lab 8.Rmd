@@ -83,8 +83,20 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 
 # Results
+The table below presents the mean scores and standard deviations for math and reading separated by sex(i.e., boys and girls) and whether these students receive free/reduced price meals or not.
 
+``` {r table means sd, echo = FALSE}
 
+sum_d <- d %>% 
+  group_by(sex, frl) %>% 
+  summarize(math_mean = mean(tmathss),
+            math_sd = sd(tmathss),
+            rdg_mean = mean(treadss),
+            rdg_sd = sd(treadss))
+
+knitr::kable(sum_d, digits = 2)
+
+```
 # Discussion
 
 Child maltreatment is characterized by its multifinality, this means that individual differences play a role in how child maltreatment is experienced and how it affects later development. In part, this can be explained by timing, dose, chronicity and type of maltreatment [@gunnar2006bringing]. For instance, Cowell, Cicchetti, Rogosch & Toth [-@cowell2015childhood] found that on measures of inhibitory control and working memory, maltreated children showed poorer performance than their non-maltreated counterparts. Furthermore, @cowell2015childhood found that within the maltreated group, children that had experienced maltreatment during infancy had worse performance in comparison with children that experienced maltreatment later in childhood. 
